@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hesap Makinesi</title>
+    <style>
+      body {
+        background-color: #adadad85;
+      }
+      .buttonstyle {
+        background-color: rgb(112, 153, 163);
+        width: 70px;
+        height: 70px;
+        font-weight: bold;
+        font-size: 30px;
+        border-radius: 10px;
+      }
+      table,
+      th,
+      td {
+        border: 4px solid black;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <table cellpadding="5" cellscanig="70">
+      <thead>
+        <tr>
+          <th colspan="4" style="font-size: 30px">HESAP MAKİNESİ</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td colspan="3">
+            <input
+              id="textbox"
+              type="text"
+              value=""
+              style="font-size: 15px; height: 50px; width: 95%"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              class="buttonstyle"
+              value="C"
+              onclick="sifirla()"
+              style="color: rgb(65, 18, 18)"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              type="button"
+              class="buttonstyle"
+              value="1"
+              onclick="degisken('1')"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              class="buttonstyle"
+              value="2"
+              onclick="degisken('2')"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              class="buttonstyle"
+              value="3"
+              onclick="degisken('3')"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              class="buttonstyle"
+              value="/"
+              onclick="degisken('/')"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              type="button"
+              class="buttonstyle"
+              value="4"
+              onclick="degisken('4')"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              class="buttonstyle"
+              value="5"
+              onclick="degisken('5')"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              class="buttonstyle"
+              value="6"
+              onclick="degisken('6')"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              class="buttonstyle"
+              value="-"
+              onclick="degisken('-')"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              type="button"
+              class="buttonstyle"
+              value="7"
+              onclick="degisken('7')"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              class="buttonstyle"
+              value="8"
+              onclick="degisken('8')"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              class="buttonstyle"
+              value="9"
+              onclick="degisken('9')"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              class="buttonstyle"
+              value="+"
+              onclick="degisken('+')"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              type="button"
+              class="buttonstyle"
+              value="."
+              onclick="degisken('.')"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              class="buttonstyle"
+              value="0"
+              onclick="degisken('0')"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              class="buttonstyle"
+              value="="
+              onclick="hesapla()"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              class="buttonstyle"
+              value="*"
+              onclick="degisken('*')"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      function sifirla() {
+        document.getElementById("textbox").setAttribute("value", "");
+      }
+
+      function degisken(x) {
+        let deger = document.getElementById("textbox").getAttribute("value");
+
+        document.getElementById("textbox").setAttribute("value", deger + x);
+      }
+      function hesapla() {
+        let sonuc = eval(
+          document.getElementById("textbox").getAttribute("value")
+        );
+
+        document.getElementById("textbox").setAttribute("value", sonuc);
+      }
+    </script>
+  </body>
+</html>
